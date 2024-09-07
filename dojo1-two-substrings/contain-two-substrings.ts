@@ -1,8 +1,11 @@
 export function containTwoSubstrings(s: string): boolean {
-    s = s.replace('AB', '0');
-    s = s.replace('BA', '1');
+    const startWithAB = s.replace("AB", "0").replace("BA", "1");
+    const startWithBA = s.replace("BA", "0").replace("AB", "1");
 
-    if (s.includes('0') && s.includes('1')) {
+    const isContainAndNoOverlapByStartWithAB = startWithAB.includes('0') && startWithAB.includes('1')
+    const isContainAndNoOverlapByStartWithBA = startWithBA.includes('0') && startWithBA.includes('1')
+
+    if (isContainAndNoOverlapByStartWithAB || isContainAndNoOverlapByStartWithBA) {
         return true;
     }
 

@@ -5,7 +5,9 @@ describe('containTwoSubstrings', () => {
         ['ABA', false],
         ['BACFAB', true],
         ['AXBYBXA', false],
-        ['ABABAB', true]
+        ['ABABAB', true],
+        ['ABAXAB', true],
+        ['BABXBA', true],
     ]
     )("should input %s return %o", (input, expected) => {
         expect(containTwoSubstrings(input)).toBe(expected);
