@@ -1,10 +1,13 @@
-export function containTwoSubstrings(s: string): boolean {
-    s = s.replace('AB', '0');
-    s = s.replace('BA', '1');
+import { containTwoSubstrings } from './contain-two-substrings';
 
-    if (s.includes('0') && s.includes('1')) {
-        return true;
-    }
-
-    return false;
-}
+describe('containTwoSubstrings', () => {
+    test.each([
+        ['ABA', false],
+        ['BACFAB', true],
+        ['AXBYBXA', false],
+        ['ABABAB', true]
+    ]
+    )("should input %s return %o", (input, expected) => {
+        expect(containTwoSubstrings(input)).toBe(expected);
+    });
+});
